@@ -24,7 +24,7 @@ const skills = [
 ];
 
 const highlights = [
-  { icon: FiCode, number: "20+", label: "Projects Delivered", subtitle: "Enterprise & SaaS" },
+  { icon: FiCode, number: "50+", label: "Projects Delivered", subtitle: "Enterprise & SaaS" },
   { icon: FiCheckCircle, number: "100%", label: "On-Time Delivery", subtitle: "Zero Failed Launches" },
   { icon: FiLayers, number: "4", label: "Continents", subtitle: "Global Delivery" },
   { icon: FiZap, number: "5.0", label: "Client Rating", subtitle: "Top Rated PM" },
