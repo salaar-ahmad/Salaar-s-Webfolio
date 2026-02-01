@@ -84,7 +84,7 @@ const featuredProjects = [
     gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
     icon: "☁️",
     images: ["/images/power1.jpeg", "/images/power2.jpeg", "/images/power3.jpeg"],
-    image: "/images/power1.jpeg"
+    image: "/images/power-main1.jpeg"
   }
 ];
 
@@ -139,7 +139,7 @@ const sapProjects = [
     ],
     gradient: "linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)",
     icon: "⚡",
-    image: "/images/placeholder.png"
+    image: "/images/ms365.jpeg"
   }
 ];
 
