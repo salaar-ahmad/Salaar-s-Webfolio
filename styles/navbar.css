@@ -249,6 +249,7 @@
   z-index: 999;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   display: flex;
   align-items: center;
@@ -258,6 +259,7 @@
 .mobile-nav-overlay.active {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-menu-container {
