@@ -34,7 +34,7 @@ const featuredProjects = [
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     icon: "🚗",
     images: ["/images/hail3.jpeg", "/images/hail4.jpeg", "/images/hail5.jpeg"],
-    image: "/images/hail3.jpeg"
+    image: "/images/hail-main2.jpeg"
   },,
   {
     id: 2,
@@ -59,7 +59,7 @@ const featuredProjects = [
     gradient: "linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%)",
     icon: "📊",
     images: ["/images/crm1.jpeg", "/images/crm2.jpeg", "/images/crm3.jpeg"],
-    image: "/images/crm1.jpeg"
+    image: "/images/crm-main1.jpeg"
   },
   {
     id: 3,
