@@ -218,7 +218,7 @@ const automationProjects = [
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     icon: "🏥",
     images: ["/images/clickup-automation1.jpeg","/images/clickup-automation2.jpeg","/images/clickup-automation3.jpeg","/images/clickup-automation4.jpeg"],
-    image: "/images/clickup-automation1.jpeg"
+    image: "/images/n8n.jpeg"
   },
   {
     id: 9,
