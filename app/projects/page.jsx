@@ -33,8 +33,8 @@ const featuredProjects = [
     ],
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     icon: "🚗",
-    images: ["/images/hail.jpeg", "/images/hail1.jpeg", "/images/hail2.jpeg"],
-    image: "/images/hail-main1.jpeg"
+    images: ["/images/hail3.jpeg", "/images/hail4.jpeg", "/images/hail5.jpeg"],
+    image: "/images/hail3.jpeg"
   },,
   {
     id: 2,
@@ -58,7 +58,8 @@ const featuredProjects = [
     ],
     gradient: "linear-gradient(135deg, #2193b0 0%, #6dd5ed 100%)",
     icon: "📊",
-    image: "/images/boardsync.png"
+    images: ["/images/crm1.jpeg", "/images/crm2.jpeg", "/images/crm3.jpeg"],
+    image: "/images/crm1.jpeg"
   },
   {
     id: 3,
@@ -82,7 +83,8 @@ const featuredProjects = [
     ],
     gradient: "linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)",
     icon: "☁️",
-    image: "/images/placeholder.png"
+    images: ["/images/power1.jpeg", "/images/power2.jpeg", "/images/power3.jpeg"],
+    image: "/images/power1.jpeg"
   }
 ];
 
@@ -113,7 +115,7 @@ const sapProjects = [
     ],
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     icon: "🔧",
-    image: "/images/zenkai.png"
+    image: "/images/sap-integration1.jpeg"
   },
   {
     id: 5,
@@ -165,7 +167,8 @@ const automationProjects = [
     ],
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     icon: "🎯",
-    image: "/images/Tutorify.png"
+    images: ["/images/clickup-workflow1.jpeg", "/images/clickup-workflow2.jpeg", "/images/clickup-workflow3.jpeg"],
+    image: "/images/clickup-workflow1.jpeg"
   },
   {
     id: 7,
@@ -189,7 +192,8 @@ const automationProjects = [
     ],
     gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
     icon: "🤖",
-    image: "/images/placeholder.png"
+    images: ["/images/super-agent1.jpeg","/images/super-agent2.jpeg"],
+    image: "/images/super-agent1.jpeg"
   },
   {
     id: 8,
@@ -213,7 +217,8 @@ const automationProjects = [
     ],
     gradient: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
     icon: "🏥",
-    image: "/images/placeholder.png"
+    images: ["/images/clickup-automation1.jpeg","/images/clickup-automation2.jpeg","/images/clickup-automation3.jpeg","/images/clickup-automation4.jpeg"],
+    image: "/images/clickup-automation1.jpeg"
   },
   {
     id: 9,
@@ -237,7 +242,8 @@ const automationProjects = [
     ],
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     icon: "⚙️",
-    image: "/images/placeholder.png"
+    images: ["/images/zapier1.jpeg", "/images/zapier1.jpeg"],
+    image: "/images/zapier1.jpeg"
   }
 ];
 
