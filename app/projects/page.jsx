@@ -115,7 +115,7 @@ const sapProjects = [
     ],
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     icon: "🔧",
-    image: "/images/sap-integration1.jpeg"
+    image: "/images/sap-integration-main.jpeg"
   },
   {
     id: 5,
@@ -168,7 +168,7 @@ const automationProjects = [
     gradient: "linear-gradient(135deg, #fa709a 0%, #fee140 100%)",
     icon: "🎯",
     images: ["/images/clickup-workflow1.jpeg", "/images/clickup-workflow2.jpeg", "/images/clickup-workflow3.jpeg"],
-    image: "/images/clickup-workflow1.jpeg"
+    image: "/images/clickup-main.jpeg"
   },
   {
     id: 7,
@@ -193,7 +193,7 @@ const automationProjects = [
     gradient: "linear-gradient(135deg, #30cfd0 0%, #330867 100%)",
     icon: "🤖",
     images: ["/images/super-agent1.jpeg","/images/super-agent2.jpeg"],
-    image: "/images/super-agent1.jpeg"
+    image: "/images/super-agent-main.jpeg"
   },
   {
     id: 8,
@@ -243,7 +243,7 @@ const automationProjects = [
     gradient: "linear-gradient(135deg, #f093fb 0%, #f5576c 100%)",
     icon: "⚙️",
     images: ["/images/zapier1.jpeg", "/images/zapier1.jpeg"],
-    image: "/images/zapier1.jpeg"
+    image: "/images/zapier-main.jpeg"
   }
 ];
 

@@ -24,9 +24,10 @@ const skills = [
 ];
 
 const highlights = [
-  { icon: FiCode, number: "20+", label: "Projects Delivered" },
-  { icon: FiLayers, number: "15+", label: "Technologies" },
-  { icon: FiZap, number: "5+", label: "Years Experience" },
+  { icon: FiCode, number: "20+", label: "Projects Delivered", subtitle: "Enterprise & SaaS" },
+  { icon: FiCheckCircle, number: "100%", label: "On-Time Delivery", subtitle: "Zero Failed Launches" },
+  { icon: FiLayers, number: "4", label: "Continents", subtitle: "Global Delivery" },
+  { icon: FiZap, number: "5.0", label: "Client Rating", subtitle: "Top Rated PM" },
 ];
 
 const experience = [
@@ -161,6 +162,7 @@ export default function About() {
                 <Icon className="stat-icon" />
                 <span className="stat-number">{item.number}</span>
                 <span className="stat-label">{item.label}</span>
+                <span className="stat-subtitle">{item.subtitle}</span>
               </div>
             );
           })}

@@ -28,7 +28,7 @@
 }
 
 .about-container {
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 5%;
   position: relative;
@@ -103,8 +103,8 @@
 /* Stats */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   margin-bottom: 70px;
 }
 
@@ -112,7 +112,7 @@
   background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
   border: 1px solid rgba(255,255,255,0.06);
   border-radius: 20px;
-  padding: 30px 24px;
+  padding: 32px 28px;
   text-align: center;
   transition: all 0.3s ease;
   position: relative;
@@ -161,6 +161,14 @@
   color: rgba(255,255,255,0.5);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.stat-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  display: block;
 }
 
 /* Bio */
