@@ -43,6 +43,16 @@ const experience = [
     ]
   },
   {
+    title: "Technical Project Manager / Product Owner",
+    company: "Simply CRM (Denmark) - Freelance",
+    period: "Sep 2025 – Present",
+    points: [
+      "Managed end-to-end delivery of CRM feature upgrades and UI transition projects, ensuring 100% on-time completion across multiple sprints.",
+      "Oversaw data cleanup and validation across old and new interfaces, improving data accuracy and system usability by over 30%.",
+      "Collaborated with Danish and international teams to streamline workflows, reducing project turnaround time by 25% through effective coordination and process optimization."
+    ]
+  },
+  {
     title: "Project Manager - SAP Integrations",
     company: "The Working Town (Pakistan)",
     period: "Jul 2025 – Present",
