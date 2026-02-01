@@ -1,0 +1,19 @@
+{
+  "name": "Salaar Ahmad - Project Manager",
+  "short_name": "Salaar Ahmad",
+  "description": "Project Manager specializing in ClickUp, SAP, DevOps, GMT, and Automation expertise.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#e85d04",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "technology"]
+}
