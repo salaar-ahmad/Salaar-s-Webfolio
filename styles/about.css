@@ -505,6 +505,27 @@
     opacity: 1 !important;
   }
   
+  .timeline-section {
+    margin-bottom: 60px !important;
+  }
+  
+  .timeline,
+  .timeline-item,
+  .timeline-content,
+  .certifications-grid,
+  .cert-card,
+  .skills-grid,
+  .skill-card {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .certifications-grid,
+  .skills-grid {
+    display: grid !important;
+  }
+  
   .about-label {
     color: #4da6ff !important;
     display: inline-block !important;
@@ -583,10 +604,29 @@
     gap: 16px !important;
   }
   
+  .skills-section {
+    margin-bottom: 60px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .section-title.center {
+    color: #fff !important;
+    display: block !important;
+  }
+  
+  .section-subtitle {
+    color: rgba(255,255,255,0.4) !important;
+    display: block !important;
+  }
+  
   .skills-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 12px !important;
     display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .skill-card {
@@ -594,14 +634,23 @@
     background: rgba(255,255,255,0.02) !important;
     display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .skill-icon {
     font-size: 1.8rem !important;
+    color: #4da6ff !important;
+    display: block !important;
+  }
+  
+  .skill-icon-image {
+    display: block !important;
+    visibility: visible !important;
   }
   
   .skill-name {
     color: rgba(255,255,255,0.7) !important;
+    display: block !important;
   }
 }
 
@@ -728,46 +777,91 @@
 
 /* Responsive for certifications */
 @media (max-width: 1400px) {
+  .certifications-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
   .certifications-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+    display: grid !important;
+    visibility: visible !important;
   }
   
   .cert-card {
     padding: 32px 24px;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 }
 
 @media (max-width: 1024px) {
   .certifications-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 20px !important;
   }
 }
 
 @media (max-width: 768px) {
+  .certifications-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 60px !important;
+  }
+  
   .certifications-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 16px !important;
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .cert-card {
-    padding: 28px 20px;
+    padding: 28px 20px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: rgba(15, 20, 30, 0.8) !important;
   }
   
   .cert-icon-wrapper {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 20px;
+    width: 60px !important;
+    height: 60px !important;
+    margin-bottom: 20px !important;
+    display: flex !important;
+    visibility: visible !important;
   }
   
   .cert-icon {
-    font-size: 1.6rem;
+    font-size: 1.6rem !important;
+    color: #4da6ff !important;
+  }
+  
+  .cert-icon-image {
+    display: block !important;
+    visibility: visible !important;
   }
   
   .cert-name {
-    font-size: 0.95rem;
-    min-height: 45px;
+    font-size: 0.95rem !important;
+    min-height: 45px !important;
+    color: #fff !important;
+    display: flex !important;
+  }
+  
+  .cert-issuer {
+    color: rgba(255, 255, 255, 0.5) !important;
+    display: block !important;
+  }
+  
+  .cert-status {
+    color: #4da6ff !important;
+    display: inline-block !important;
   }
 }
 
@@ -928,21 +1022,90 @@
 
 /* Responsive for timeline */
 @media (max-width: 768px) {
-  .timeline {
-    padding-left: 24px;
-  }
-  
-  .timeline-marker {
-    left: -24px;
-    width: 12px;
-    height: 12px;
-  }
-  
-  .timeline-content {
-    padding: 20px;
+  .timeline-section {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    margin-bottom: 60px !important;
   }
   
   .section-header {
-    justify-content: center;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .section-icon {
+    color: #4da6ff !important;
+    display: block !important;
+  }
+  
+  .section-title {
+    color: #fff !important;
+    display: block !important;
+  }
+  
+  .timeline {
+    padding-left: 24px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .timeline-item {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .timeline-marker {
+    left: -24px !important;
+    width: 12px !important;
+    height: 12px !important;
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .timeline-content {
+    padding: 20px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    background: rgba(255,255,255,0.02) !important;
+  }
+  
+  .timeline-period {
+    color: #4da6ff !important;
+    display: inline-block !important;
+  }
+  
+  .timeline-title {
+    color: #fff !important;
+    display: block !important;
+  }
+  
+  .timeline-company {
+    color: rgba(255,255,255,0.5) !important;
+    display: block !important;
+  }
+  
+  .timeline-points {
+    display: block !important;
+    visibility: visible !important;
+  }
+  
+  .timeline-points li {
+    color: rgba(255,255,255,0.65) !important;
+    display: block !important;
+  }
+  
+  .timeline-header-with-logo {
+    display: flex !important;
+    visibility: visible !important;
+  }
+  
+  .education-logo {
+    display: block !important;
+    visibility: visible !important;
   }
 }
