@@ -132,7 +132,7 @@ export default function Home() {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <div className="stat-item">
-            <div className="stat-num">20+</div>
+            <div className="stat-num">50+</div>
             <div className="stat-label">Projects Delivered</div>
           </div>
           <div className="stat-item">
