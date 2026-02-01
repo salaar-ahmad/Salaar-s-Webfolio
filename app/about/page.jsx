@@ -176,20 +176,19 @@ export default function About() {
           <div className="bio-content">
             <h2 className="bio-title">My Story</h2>
             <p className="bio-text">
-              I'm a <span className="accent">Technical Project Manager</span> with a Computer Engineering background and hands-on experience 
-              delivering mission-critical systems, SaaS products, and enterprise integrations across global teams. I've owned end-to-end 
-              delivery of complex initiatives including <span className="accent">Microsoft Dynamics 365 CRM/ERP implementations</span>, 
-              <span className="accent">SAP integrations (SD, C4C, FICO, PLM, HCM)</span>, and SaaS platforms from MVP through production.
+              <span className="accent">From commanding 30+ technical personnel in high-pressure military deployments to delivering enterprise systems across 4 continents</span>, I turn chaos into shipped products.
             </p>
             <p className="bio-text">
-              My work spans startups and enterprises across <span className="accent">Australia, the U.S., Europe, and Pakistan</span>, 
-              with deep experience translating business needs into structured technical execution. Previously, I led military-grade projects 
-              with the Pakistan Armed Forces, managing high-pressure deployments and collaborating with international partners including NORINCO.
+              I'm a <span className="accent">Technical Project Manager</span> who learned delivery excellence in the most demanding environment possible: the Pakistan Armed Forces, where mission failure wasn't an option. For three years, I led cross-functional teams delivering mission-critical, military-grade systems under extreme pressure, collaborating with international partners including Chinese NORINCO engineers on large-scale installations.
             </p>
             <p className="bio-text">
-              I specialize in <span className="accent">Agile delivery, sprint execution, stakeholder alignment, and workflow optimization</span>, 
-              using tools like Azure DevOps, Jira, Linear, ClickUp, Notion, and Microsoft 365 to create clarity and momentum. I'm driven by 
-              turning ambiguity into execution and building systems teams actually adopt.
+              That discipline now powers how I deliver <span className="accent">Microsoft Dynamics 365 CRM/ERP implementations, SAP integrations (SD, C4C, FICO, PLM, HCM)</span>, and SaaS platforms from MVP through production. My work spans startups and enterprises across <span className="accent">Australia, the U.S., Europe, and Pakistan</span>, translating complex business needs into structured technical execution that teams actually adopt.
+            </p>
+            <p className="bio-text">
+              I specialize in <span className="accent">Agile delivery, sprint execution, stakeholder alignment, and workflow optimization</span>, using tools like Azure DevOps, Jira, Linear, ClickUp, and Microsoft 365 to create clarity and momentum. Whether it's building a ride-hailing platform with Stripe integration, implementing CI/CD pipelines for Power Platform solutions, or transforming 50+ ClickUp workspaces, I'm driven by one thing: <span className="accent">turning ambiguity into execution and building systems teams actually use</span>.
+            </p>
+            <p className="bio-text" style={{ fontWeight: 600, color: '#4da6ff', marginTop: '20px' }}>
+              50+ projects delivered. 100% on-time. Global impact.
             </p>
             <div className="bio-actions">
               <a href="/Resume_Salaar-Ahmad-Furqan.pdf" target="_blank" rel="noopener noreferrer" className="resume-btn">
