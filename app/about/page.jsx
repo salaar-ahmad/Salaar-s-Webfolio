@@ -32,7 +32,7 @@ const highlights = [
 
 const experience = [
   {
-    title: "Project Delivery Manager (Remote)",
+    title: "Project Delivery Manager (Remote)", 
     company: "Exhortek (Australia)",
     period: "Sep 2025 – Present",
     points: [
