@@ -1,6 +1,7 @@
 import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 import { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
 
 const siteName = "Salaar Ahmad Furqan - Technical Project Manager";
 const siteDescription = "Top Rated Technical Project Manager specializing in ClickUp, SAP, Azure DevOps, Agile methodologies, and enterprise automation. Delivering mission-critical projects across global teams.";
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <ClientLayout>{children}</ClientLayout>
+        <Analytics />
       </body>
     </html>
   );
