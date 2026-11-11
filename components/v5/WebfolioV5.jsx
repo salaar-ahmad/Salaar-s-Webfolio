@@ -181,7 +181,7 @@ export default function WebfolioV5() {
             <div className="avail reveal span2">
               <span className="mono" style={{ display: "inline-flex", alignItems: "center", gap: 10, color: "#e0e6ff" }}><span className="dot pulse" style={{ background: "#4ade80" }} aria-hidden="true" />Availability</span>
               <span style={{ display: "flex", flexWrap: "wrap", alignItems: "flex-end", justifyContent: "space-between", gap: 16 }}>
-                <span className="big">[Open from Month]</span>
+                <span className="big">Booking calls for new projects</span>
                 <Book className="btn btn-white">Check a start date</Book>
               </span>
             </div>
