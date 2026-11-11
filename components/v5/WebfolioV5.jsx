@@ -22,10 +22,10 @@ const ArrowDown = () => (
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6" /></svg>
 );
 
-function Logo({ src, size, radius, pad, bleed, alt = "" }) {
+function Logo({ src, size, radius, pad, bleed, alt = "", eager }) {
   return (
     <span className={"logo" + (bleed ? " bleed" : "")} style={{ width: size, height: size, borderRadius: radius, padding: pad }}>
-      <img src={src} alt={alt} loading="lazy" />
+      <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} />
     </span>
   );
 }
@@ -135,14 +135,14 @@ export default function WebfolioV5() {
           <div className="marquee">
             <ul className="track">
               {tools(TOOLS_A).map((n, i) => (
-                <li key={n + i} className="tool" aria-hidden={i >= TOOLS_A.length || undefined}><Logo src={LOGO[n]} size={36} radius={18} pad={7} />{n}</li>
+                <li key={n + i} className="tool" aria-hidden={i >= TOOLS_A.length || undefined}><Logo src={LOGO[n]} size={36} radius={18} pad={7} eager />{n}</li>
               ))}
             </ul>
           </div>
           <div className="marquee" aria-hidden="true">
             <ul className="track rev">
               {tools(TOOLS_B).map((n, i) => (
-                <li key={n + i} className="tool"><Logo src={LOGO[n]} size={36} radius={18} pad={7} />{n}</li>
+                <li key={n + i} className="tool"><Logo src={LOGO[n]} size={36} radius={18} pad={7} eager />{n}</li>
               ))}
             </ul>
           </div>
