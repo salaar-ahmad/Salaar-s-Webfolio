@@ -15,9 +15,12 @@ export default function ClientLayout({ children }) {
     return () => clearTimeout(timer);
   }, []);
 
+  // The V5 homepage ships its own header and footer, so it skips the classic chrome and preloader.
+  if (pathname === "/") return <>{children}</>;
+
   if (loading) return <Preloader />;
 
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/classic";
 
   return (
     <>
