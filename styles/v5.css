@@ -193,6 +193,11 @@ body:has(.v5) { background: #09090c; }
 .v5 .d1 { animation-delay: 0.08s; } .v5 .d2 { animation-delay: 0.18s; } .v5 .d3 { animation-delay: 0.28s; }
 @keyframes v5rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
 
+@media (max-width: 1000px) {
+  html:has(.v5) { scroll-padding-top: 140px; }
+  .v5 .mark .muted { display: none; }
+  .v5 .nav { gap: 4px 20px; }
+}
 @media (max-width: 760px) {
   .v5 .wrap { padding-left: 16px; padding-right: 16px; }
   .v5 .span2 { grid-column: auto; }
