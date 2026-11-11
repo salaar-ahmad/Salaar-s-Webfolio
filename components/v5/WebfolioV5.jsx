@@ -92,7 +92,7 @@ export default function WebfolioV5() {
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
           </nav>
-          <Book className="btn btn-light"><span className="dot pulse" aria-hidden="true" />Book a 30-min call</Book>
+          <Book className="btn btn-light hdr-cta"><span className="dot pulse" aria-hidden="true" /><span className="long">Book a 30-min call</span><span className="short">Book a call</span></Book>
         </div>
       </header>
 
@@ -115,7 +115,7 @@ export default function WebfolioV5() {
             </div>
             <figure className="figure">
               <div className="orbit" aria-hidden="true">
-                <div className="ring">
+                <div className="orbit-spin">
                   {ORBIT.map((n, i) => {
                     const a = (i / ORBIT.length) * Math.PI * 2 - Math.PI / 2;
                     return (
@@ -346,7 +346,7 @@ export default function WebfolioV5() {
             <h2 className="reveal">Got a rollout that keeps slipping?</h2>
             <div className="reveal ctas" style={{ justifyContent: "center", gap: "16px 24px" }}>
               <Book className="btn btn-brand" >Book a 30-min call<ArrowRight /></Book>
-              <a href={`mailto:${EMAIL}`} style={{ fontSize: 17 }}>{EMAIL}</a>
+              <a href={`mailto:${EMAIL}`} className="tap" style={{ fontSize: 17 }}>{EMAIL}</a>
             </div>
             <div className="foot">
               <span>Salaar Ahmad Furqan / Islamabad</span>
