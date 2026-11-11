@@ -300,7 +300,7 @@ export default function WebfolioV5() {
               const ex = role === i;
               return (
                 <li key={r.org} className={"wcard" + (ex ? " open" : "")}>
-                  <button type="button" className="wbtn pad" style={{ height: "100%", justifyContent: "space-between" }} aria-expanded={ex} aria-controls={`role-${i}`} onClick={() => setRole(ex ? null : i)}>
+                  <button type="button" className="wbtn pad" style={{ flex: "1 1 auto", justifyContent: "space-between" }} aria-expanded={ex} aria-controls={`role-${i}`} onClick={() => setRole(ex ? null : i)}>
                     <span className="wtop">
                       <Logo src={r.logo} size={64} radius={18} pad={10} bleed={r.bleed} />
                       <span style={{ display: "flex", alignItems: "center", gap: 10 }}>
