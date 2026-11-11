@@ -102,7 +102,7 @@ export default function WebfolioV5() {
             <div className="hero-copy">
               <p className="mono eyebrow rise"><span className="pill">Technical and ERP Project Manager</span><span className="muted">Islamabad, UTC+5 / AU, US, EU, LATAM</span></p>
               <h1 className="h1 rise d1">Separate systems.<br /><span className="grad">One operation.</span></h1>
-              <p className="lead rise d2">I deliver Dynamics 365, SAP, Power Platform and automation projects that still work after go-live. Military-trained, now running rollouts the way I ran operations.</p>
+              <p className="lead rise d2">I deliver Dynamics 365, SAP, Power Platform and automation projects that still work after go-live. Ex-Army, now running rollouts the way I ran operations.</p>
               <div className="ctas rise d3">
                 <Book className="btn btn-brand">Book a 30-min call<ArrowRight /></Book>
                 <a href="#work" className="btn btn-ghost">See the work</a>
