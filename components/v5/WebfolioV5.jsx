@@ -71,7 +71,7 @@ export default function WebfolioV5() {
     { label: "Projects in this index", value: Math.round(PROJECTS.length * ease), sub: "Across ERP, automation and product" },
     { label: "Regions", value: Math.round(4 * ease), sub: "AU, US, EU, LATAM" },
     { label: "Platforms wired", value: Math.round(platformCount * ease), sub: "Into one operation per client" },
-    { label: "Years delivering", value: Math.round(4 * ease) + "+", sub: "End to end, scope to hypercare" },
+    { label: "Years delivering", value: Math.round(5 * ease), sub: "End to end, scope to hypercare" },
   ];
 
   const tools = (list) => list.concat(list);
@@ -170,7 +170,7 @@ export default function WebfolioV5() {
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z" /></svg>
                 Before this
               </span>
-              <p>Three years as a Technical Project Manager in the Pakistan Armed Forces. Briefings, logistics, people who depend on the plan holding. That is still the job: get the scope right, keep the teams moving, and hand over something that runs without me.</p>
+              <p>Nearly four years as a Technical Project Manager and QA Officer in the Pakistan Army, leading teams of up to 22. Briefings, logistics, people who depend on the plan holding. That is still the job: get the scope right, keep the teams moving, and hand over something that runs without me.</p>
             </div>
             {stats.map((s) => (
               <div key={s.label} className="glass lift stat reveal">
