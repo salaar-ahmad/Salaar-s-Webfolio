@@ -4,9 +4,12 @@
 import { useEffect, useMemo, useState } from "react";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { getCalApi } from "@calcom/embed-react";
+import { FaLinkedinIn, FaGithub } from "react-icons/fa";
+import { SiUpwork } from "react-icons/si";
+import { FiFileText, FiMail, FiPhone } from "react-icons/fi";
 import "@/styles/v5.css";
 import {
-  BOOKING_URL, EMAIL, LOGO, SHOT, PROJECTS, ROLES, CREDS, FILTERS, STACK, CAT_FOR,
+  BOOKING_URL, EMAIL, PHONE, PHONE_TEL, UPWORK_URL, LOGO, SHOT, PROJECTS, ROLES, CREDS, FILTERS, STACK, CAT_FOR,
   TOOLS_A, TOOLS_B, ORBIT, MANIFESTO,
 } from "./data";
 
@@ -373,15 +376,17 @@ export default function WebfolioV5() {
             <h2 className="reveal">Got a rollout that keeps slipping?</h2>
             <div className="reveal ctas" style={{ justifyContent: "center", gap: "16px 24px" }}>
               <Book className="btn btn-brand" >Book a 30-min call<ArrowRight /></Book>
-              <a href={`mailto:${EMAIL}`} className="tap" style={{ fontSize: 17 }}>{EMAIL}</a>
+              <a href={`mailto:${EMAIL}`} className="tap contact-link"><FiMail aria-hidden="true" />{EMAIL}</a>
+              <a href={`tel:${PHONE_TEL}`} className="tap contact-link"><FiPhone aria-hidden="true" />{PHONE}</a>
             </div>
             <div className="foot">
               <span>Salaar Ahmad Furqan / Islamabad</span>
-              <nav aria-label="Elsewhere">
-                <a href="https://linkedin.com/in/salaarahmadfurqan" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/salaar-ahmad/" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="/resume">Resume</a>
-                <a href="/classic">Classic site</a>
+              <nav aria-label="Elsewhere" className="socials">
+                <a href="https://linkedin.com/in/salaarahmadfurqan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn"><FaLinkedinIn aria-hidden="true" /></a>
+                <a href="https://github.com/salaar-ahmad/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><FaGithub aria-hidden="true" /></a>
+                <a href={UPWORK_URL} target="_blank" rel="noopener noreferrer" aria-label="Upwork" title="Upwork"><SiUpwork aria-hidden="true" /></a>
+                <a href="/resume" aria-label="Resume" title="Resume"><FiFileText aria-hidden="true" /></a>
+                <a href={`mailto:${EMAIL}`} aria-label="Email" title="Email"><FiMail aria-hidden="true" /></a>
               </nav>
             </div>
           </div>

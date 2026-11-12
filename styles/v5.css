@@ -188,6 +188,11 @@ body:has(.v5) { background: #09090c; }
 .v5 .contact h2 { max-width: 1100px; font-size: clamp(48px, 7.6vw, 116px); font-weight: 800; line-height: 0.95; letter-spacing: -0.045em; color: var(--ink); }
 .v5 .foot { align-self: stretch; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; margin-top: 64px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1); font-size: 14px; }
 .v5 .foot nav { display: flex; flex-wrap: wrap; gap: 24px; }
+.v5 .foot .socials { gap: 10px; }
+.v5 .foot .socials a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.14); color: var(--soft); font-size: 18px; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+.v5 .foot .socials a:hover { background: var(--ink); border-color: var(--ink); color: #09090c; transform: translateY(-2px); }
+.v5 .contact-link { gap: 10px; font-size: 17px; }
+.v5 .contact-link svg { color: var(--tint); }
 
 /* Entrance */
 .v5 .rise { animation: v5rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }

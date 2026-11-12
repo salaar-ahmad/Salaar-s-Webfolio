@@ -2,6 +2,9 @@
 
 export const BOOKING_URL = "https://cal.com/salaar-ahmad-4xrirn/30min";
 export const EMAIL = "salaar31@gmail.com";
+export const PHONE = "+92 335 3717117";
+export const PHONE_TEL = "+923353717117";
+export const UPWORK_URL = "https://www.upwork.com/freelancers/salaarahmad";
 
 const P = "/v5/logos/";
 export const LOGO = {
