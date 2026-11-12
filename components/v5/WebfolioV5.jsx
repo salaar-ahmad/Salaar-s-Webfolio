@@ -71,16 +71,6 @@ export default function WebfolioV5() {
   const [role, setRole] = useState(0);
   const [k, setK] = useState(1);
 
-  // Live local time in Islamabad, refreshed every 30s (client-only to avoid hydration mismatch).
-  const [localTime, setLocalTime] = useState("");
-  useEffect(() => {
-    const fmt = new Intl.DateTimeFormat("en-US", { timeZone: "Asia/Karachi", hour: "numeric", minute: "2-digit" });
-    const tick = () => setLocalTime(fmt.format(new Date()).toLowerCase());
-    tick();
-    const id = setInterval(tick, 30000);
-    return () => clearInterval(id);
-  }, []);
-
   // Warm up the Cal.com embed so the modal opens quickly on first click.
   useEffect(() => { loadCal().catch(() => {}); }, []);
 
@@ -143,7 +133,7 @@ export default function WebfolioV5() {
               <p className="intro rise">
                 <span className="dot pulse" aria-hidden="true" />
                 <span>Technical &amp; ERP project manager, based in Islamabad.</span>
-                {localTime && <span className="muted">It&apos;s {localTime} here.</span>}
+                <span className="muted">Working with teams in Australia, the US, Europe and Latin America.</span>
               </p>
               <h1 className="h1 rise d1">Separate systems.<br /><span className="grad">One operation.</span></h1>
               <p className="lead rise d2">I deliver Dynamics 365, SAP, Power Platform and automation projects that still work after go-live. Ex-Army, now running rollouts the way I ran operations.</p>
