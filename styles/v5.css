@@ -227,6 +227,7 @@ body:has(.v5) { background: #09090c; }
   .v5 .hdr-cta .long { display: none; }
   .v5 .hdr-cta .short { display: inline; }
   .v5 .hero-in { padding-top: 40px; }
+  .v5 .intro-sub { padding-left: 0; }
   .v5 .hero-copy { padding-bottom: 32px; }
   .v5 .wcard.open .wvis { height: 240px; }
 }
