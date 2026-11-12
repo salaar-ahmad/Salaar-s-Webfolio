@@ -130,11 +130,10 @@ export default function WebfolioV5() {
         <section id="top" className="hero">
           <div className="wrap hero-in">
             <div className="hero-copy">
-              <p className="intro rise">
-                <span className="dot pulse" aria-hidden="true" />
-                <span>Technical &amp; ERP project manager, based in Islamabad.</span>
-                <span className="muted">Working with teams in Australia, the US, Europe and Latin America.</span>
-              </p>
+              <div className="intro rise">
+                <p className="intro-main"><span className="dot pulse" aria-hidden="true" />I&apos;m Salaar, a <span className="intro-role">technical &amp; ERP project manager</span> based in Islamabad.</p>
+                <p className="intro-sub">Working with teams in Australia, the US, Europe and Latin America.</p>
+              </div>
               <h1 className="h1 rise d1">Separate systems.<br /><span className="grad">One operation.</span></h1>
               <p className="lead rise d2">I deliver Dynamics 365, SAP, Power Platform and automation projects that still work after go-live. Ex-Army, now running rollouts the way I ran operations.</p>
               <div className="ctas rise d3">
