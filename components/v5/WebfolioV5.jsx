@@ -3,6 +3,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { Inter, JetBrains_Mono } from "next/font/google";
+import { getCalApi } from "@calcom/embed-react";
 import "@/styles/v5.css";
 import {
   BOOKING_URL, EMAIL, LOGO, SHOT, PROJECTS, ROLES, CREDS, FILTERS, STACK, CAT_FOR,
@@ -30,9 +31,32 @@ function Logo({ src, size, radius, pad, bleed, alt = "", eager }) {
   );
 }
 
+// Cal.com booking opens in an in-page modal. The plain link stays as a fallback
+// (no JavaScript, embed blocked, or a ctrl/cmd-click to open a new tab).
+const CAL_NAMESPACE = "intro-call";
+const CAL_LINK = new URL(BOOKING_URL).pathname.replace(/^\//, "");
+const CAL_CONFIG = { layout: "month_view", theme: "dark" };
+let calReady = null;
+function loadCal() {
+  if (!calReady) {
+    calReady = getCalApi({ namespace: CAL_NAMESPACE }).then((cal) => {
+      cal("ui", { theme: "dark", hideEventTypeDetails: false, layout: "month_view", cssVarsPerTheme: { dark: { "cal-brand": "#3d5afe" } } });
+      return cal;
+    });
+  }
+  return calReady;
+}
+
 function Book({ className, children }) {
+  const onClick = (e) => {
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+    loadCal()
+      .then((cal) => cal("modal", { calLink: CAL_LINK, config: CAL_CONFIG }))
+      .catch(() => window.open(BOOKING_URL, "_blank", "noopener"));
+  };
   return (
-    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={className}>{children}</a>
+    <a href={BOOKING_URL} target="_blank" rel="noopener noreferrer" className={className} onClick={onClick} aria-haspopup="dialog">{children}</a>
   );
 }
 
@@ -43,6 +67,9 @@ export default function WebfolioV5() {
   const [stackOpen, setStackOpen] = useState(0);
   const [role, setRole] = useState(0);
   const [k, setK] = useState(1);
+
+  // Warm up the Cal.com embed so the modal opens quickly on first click.
+  useEffect(() => { loadCal().catch(() => {}); }, []);
 
   // Count-up for the stats and usage bars.
   useEffect(() => {
