@@ -128,6 +128,12 @@ export default function WebfolioV5() {
 
       <main>
         <section id="top" className="hero">
+          <div className="cine" aria-hidden="true">
+            {Object.values(SHOT).map((src, i) => (
+              <img key={src} src={src} alt="" className="cine-frame" style={{ animationDelay: `${i * 6}s` }} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+            ))}
+            <span className="cine-shade" />
+          </div>
           <div className="wrap hero-in">
             <div className="hero-copy">
               <div className="intro rise">
