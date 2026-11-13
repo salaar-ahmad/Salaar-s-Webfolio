@@ -29,14 +29,14 @@ const T = ({ x, y, s = 18, c = C.ink, w = 600, a = "start", children }) => (
 
 /* 1. Systems map: separate platforms flowing into one operation */
 function SystemsMap() {
-  const hub = { x: 1180, y: 450 };
+  const hub = { x: 1160, y: 290 };
   const nodes = [
-    { n: "SAP", x: 860, y: 210 },
-    { n: "Dynamics 365", x: 1500, y: 200 },
-    { n: "Power Platform", x: 800, y: 470 },
-    { n: "ClickUp", x: 1540, y: 470 },
-    { n: "Azure DevOps", x: 900, y: 720 },
-    { n: "n8n · Zapier", x: 1460, y: 730 },
+    { n: "SAP", x: 820, y: 150 },
+    { n: "Dynamics 365", x: 1480, y: 140 },
+    { n: "Power Platform", x: 800, y: 420 },
+    { n: "ClickUp", x: 1500, y: 400 },
+    { n: "Azure DevOps", x: 880, y: 640 },
+    { n: "n8n · Zapier", x: 1470, y: 650 },
   ];
   return (
     <>
