@@ -1,9 +1,10 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { getCalApi } from "@calcom/embed-react";
+import HeroScenes from "./HeroScenes";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { SiUpwork } from "react-icons/si";
 import { FiFileText, FiMail, FiPhone } from "react-icons/fi";
@@ -71,6 +72,29 @@ export default function WebfolioV5() {
   const [role, setRole] = useState(0);
   const [k, setK] = useState(1);
 
+  // Gentle pointer parallax on the hero backdrop (desktop mouse only, off for reduced motion).
+  const cineRef = useRef(null);
+  useEffect(() => {
+    const el = cineRef.current;
+    if (!el || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches || !window.matchMedia?.("(pointer: fine)").matches) return;
+    const hero = el.parentElement;
+    let raf = 0, tx = 0, ty = 0, x = 0, y = 0;
+    const loop = () => {
+      x += (tx - x) * 0.06; y += (ty - y) * 0.06;
+      el.style.setProperty("--px", `${x.toFixed(2)}px`);
+      el.style.setProperty("--py", `${y.toFixed(2)}px`);
+      raf = Math.abs(tx - x) + Math.abs(ty - y) > 0.1 ? requestAnimationFrame(loop) : 0;
+    };
+    const onMove = (e) => {
+      const r = hero.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width - 0.5) * -24;
+      ty = ((e.clientY - r.top) / r.height - 0.5) * -16;
+      if (!raf) raf = requestAnimationFrame(loop);
+    };
+    hero.addEventListener("pointermove", onMove);
+    return () => { hero.removeEventListener("pointermove", onMove); cancelAnimationFrame(raf); };
+  }, []);
+
   // Warm up the Cal.com embed so the modal opens quickly on first click.
   useEffect(() => { loadCal().catch(() => {}); }, []);
 
@@ -128,10 +152,10 @@ export default function WebfolioV5() {
 
       <main>
         <section id="top" className="hero">
-          <div className="cine" aria-hidden="true">
-            {Object.values(SHOT).map((src, i) => (
-              <img key={src} src={src} alt="" className="cine-frame" style={{ animationDelay: `${i * 6}s` }} loading={i === 0 ? "eager" : "lazy"} decoding="async" />
-            ))}
+          <div className="cine" aria-hidden="true" ref={cineRef}>
+            <div className="cine-move">
+              <HeroScenes />
+            </div>
             <span className="cine-shade" />
           </div>
           <div className="wrap hero-in">
