@@ -275,3 +275,6 @@ body:has(.v5) { background: #09090c; }
   .v5 *, .v5 *::before, .v5 *::after { animation: none !important; transition: none !important; }
   html:has(.v5) { scroll-behavior: auto; }
 }
+
+/* With the scene backdrop, the orbiting logos duplicate the systems map; keep only the glow. */
+.v5 .orbit-spin { display: none; }
