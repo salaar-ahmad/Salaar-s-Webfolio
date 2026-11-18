@@ -28,7 +28,11 @@ export default function ContactSection() {
       to_email: EMAIL,
     }, "4McJnW1UwEbWA2DvM")
       .then(() => { setStatus({ sending: false, ok: true }); setForm({ name: "", email: "", message: "", budget: "" }); })
-      .catch(() => setStatus({ sending: false, ok: false }));
+      .catch((err) => {
+        // EmailJS returns the reason in err.text, e.g. "Gmail_API: Invalid grant. Please reconnect your Gmail account".
+        console.error("Contact form: EmailJS send failed", err?.status, err?.text || err);
+        setStatus({ sending: false, ok: false });
+      });
   };
 
   return (
