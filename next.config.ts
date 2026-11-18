@@ -9,6 +9,15 @@ const nextConfig: NextConfig = {
     deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048],
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
+  // The site is a single page now; old page addresses land on the matching section.
+  async redirects() {
+    return [
+      { source: "/about", destination: "/#history", permanent: false },
+      { source: "/services", destination: "/#services", permanent: false },
+      { source: "/testimonials", destination: "/#reviews", permanent: false },
+      { source: "/contact", destination: "/#contact", permanent: false },
+    ];
+  },
   async headers() {
     return [
       {

@@ -2,8 +2,11 @@ import "./globals.css";
 import ClientLayout from "@/components/ClientLayout";
 import { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
+import { Geist } from "next/font/google";
 
-const siteName = "Salaar Ahmad Furqan - Technical Project Manager";
+const sign = Geist({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
+
+const siteName = "Salaar Ahmad Furqan | Technical Project Manager";
 const siteDescription = "Top Rated Technical Project Manager specializing in ClickUp, SAP, Azure DevOps, Agile methodologies, and enterprise automation. Delivering mission-critical projects across global teams.";
 const siteUrl = "https://salaarahmad.com"; // Update with your actual domain
 
@@ -42,7 +45,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={sign.variable}>
       <body>
         <ClientLayout>{children}</ClientLayout>
         <Analytics />

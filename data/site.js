@@ -5,6 +5,9 @@ export const EMAIL = "salaar31@gmail.com";
 export const PHONE = "+92 335 3717117";
 export const PHONE_TEL = "+923353717117";
 export const UPWORK_URL = "https://www.upwork.com/freelancers/salaarahmad";
+// Headline figures, as given by Salaar (Nov 2026). Update here when they change.
+export const PROJECTS_DELIVERED = 25; // shown as "25+"
+export const UPWORK_JOBS = 30;
 
 const P = "/v5/logos/";
 export const LOGO = {

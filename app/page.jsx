@@ -1,5 +1,5 @@
-import WebfolioV5 from "@/components/v5/WebfolioV5";
+import Home from "@/components/v6/Home";
 
-export default function Home() {
-  return <WebfolioV5 />;
+export default function Page() {
+  return <Home />;
 }

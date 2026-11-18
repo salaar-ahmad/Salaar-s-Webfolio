@@ -2,7 +2,7 @@ export const projects = [
   {
     id: 1,
     slug: "hail-ride-hailing",
-    title: "Hail - Ride-Hailing Application",
+    title: "Hail: Ride-Hailing Application",
     description: "Led complete MVP delivery of a ride-hailing platform similar to inDrive, from initial scope definition through final production launch. Coordinated cross-functional engineering teams across frontend, backend, and mobile development while managing architecture decisions and delivery milestones. Defined MVP scope & architecture, coordinated 3 engineering teams, integrated Stripe payments, built scalable ride-matching system, delivered ahead of schedule, and created a production-ready platform.",
     tags: ["React", "React Native", "Node.js", "PostgreSQL", "Stripe", "AWS", "Redis", "Linear"],
     image: "/images/hail-main2.jpeg",
@@ -122,7 +122,7 @@ export const projects = [
   {
     id: 11,
     slug: "sap-c4c-service-cloud",
-    title: "SAP C4C Integration - Service Cloud V1",
+    title: "SAP C4C Integration: Service Cloud V1",
     description: "Led a comprehensive 4-week Service Cloud implementation project focused on setting up business processes, automation, and SLA governance for enterprise client. Oversaw configuration of roles, permissions, accounts, contacts, product data, and case management workflows. Coordinated email channel setup with SMTP readiness, ensuring seamless customer communication. Directed the design and deployment of service catalog and SLA configurations, including automated routing rules and assignment logic. Final phase included creating and testing email workflow rules (create, update, SLA breach notifications) and executing end-to-end system validation. Delivered the project on time with a robust, fully tested service management foundation.",
     tags: ["SAP C4C", "Service Cloud", "SLA Management", "Enterprise"],
     image: "/images/sap-integration1.jpeg",
@@ -134,8 +134,8 @@ export const projects = [
   {
     id: 12,
     slug: "sap-sd-integration",
-    title: "SAP SD Integration - ECC Landscape",
-    description: "Successfully led a 5-week end-to-end API development initiative for SAP Sales & Distribution module. Managed cross-functional teams of developers and stakeholders throughout the project lifecycle. Oversaw requirement gathering, scope finalization, and creation of development/test environment. Coordinated the delivery of 10+ APIs, including Sales Order Creation, Sales Order Update, Customer Master Data, and Pricing APIs, with complete unit testing, internal reviews, and Postman collections for validation. Directed weekly status meetings, tracked deliverables, and ensured on-time milestones. The project concluded with a final demo, integration support, bug fixes, and comprehensive wrap-up reporting — delivering a smooth, high-quality release on schedule.",
+    title: "SAP SD Integration: ECC Landscape",
+    description: "Successfully led a 5-week end-to-end API development initiative for SAP Sales & Distribution module. Managed cross-functional teams of developers and stakeholders throughout the project lifecycle. Oversaw requirement gathering, scope finalization, and creation of development/test environment. Coordinated the delivery of 10+ APIs, including Sales Order Creation, Sales Order Update, Customer Master Data, and Pricing APIs, with complete unit testing, internal reviews, and Postman collections for validation. Directed weekly status meetings, tracked deliverables, and ensured on-time milestones. The project concluded with a final demo, integration support, bug fixes, and comprehensive wrap-up reporting, delivering a smooth, high-quality release on schedule.",
     tags: ["SAP SD", "API Development", "ECC", "Integration"],
     image: "/images/sap-integration2.jpeg",
     images: ["/images/sap-integration2.jpeg", "/images/sap-integration1.jpeg"],

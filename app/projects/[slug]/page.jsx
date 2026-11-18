@@ -34,7 +34,7 @@ export async function generateMetadata({ params }) {
       "Enterprise Solutions",
     ],
     openGraph: {
-      title: `${project.title} - Salaar Ahmad`,
+      title: `${project.title} | Salaar Ahmad`,
       description: project.description,
       url: `${siteUrl}/projects/${project.slug}`,
       type: "article",
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }) {
     },
     twitter: {
       card: "summary_large_image",
-      title: `${project.title} - Salaar Ahmad`,
+      title: `${project.title} | Salaar Ahmad`,
       description: project.description,
       images: [`${siteUrl}${project.image}`],
     },
