@@ -28,8 +28,9 @@ const nextConfig: NextConfig = {
             value: "nosniff",
           },
           {
+            // SAMEORIGIN, not DENY: the resume page shows the PDF in a frame from this same site.
             key: "X-Frame-Options",
-            value: "DENY",
+            value: "SAMEORIGIN",
           },
           {
             key: "X-XSS-Protection",
