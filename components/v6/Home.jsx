@@ -127,7 +127,7 @@ export default function Home() {
               )}
             </div>
             <ul className="trust" aria-label="Credentials">
-              <li><span className="trust-logo"><img src={LOGO["ClickUp Expert"]} alt="" /></span><span><b>ClickUp Expert</b> certified</span></li>
+              <li><span className="trust-logo"><img src={LOGO.ClickUp} alt="" /></span><span><b>ClickUp Expert</b> certified</span></li>
               <li><span className="trust-logo"><img src={LOGO.PMI} alt="" /></span><span><b>PMP</b> in progress with PMI</span></li>
             </ul>
             <p className="status-line"><span className="live" aria-hidden="true" />Booking calls for new projects<span className="sep" aria-hidden="true" />Islamabad <LocalTime /></p>
