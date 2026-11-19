@@ -12,6 +12,18 @@ export const projects = [
     live: "#",
   },
   {
+    id: 16,
+    slug: "ghl-sms-drip-pipeline",
+    title: "GHL SMS Drip & Lead Pipeline",
+    description: "A US health insurance agency had thousands of cold leads and no compliant way to work them. I built a two-workflow SMS system in GoHighLevel. Workflow 1 triggers on a tag, sends in drip mode to protect sender reputation, and checks DND before every send. Workflow 2 listens for replies and sorts them: opt-outs and STOP keywords end cleanly, while interested leads leave the drip, get tagged and get an opportunity created automatically. Agents now work one pipeline (Replied, Convo Started, Ineligible, Sold). Over 47,000 contacts have been enrolled.",
+    tags: ["GoHighLevel", "SMS Automation", "Workflows", "DND Compliance", "Pipelines"],
+    image: "/images/ghl-sms-cover.jpeg",
+    images: ["/images/ghl-sms-cover.jpeg", "/images/ghl-sms-workflow1.jpeg", "/images/ghl-sms-workflow2.jpeg", "/images/ghl-sms-pipeline.jpeg"],
+    type: "image",
+    github: "#",
+    live: "#",
+  },
+  {
     id: 2,
     slug: "simply-crm",
     title: "Simply CRM Enhancements",

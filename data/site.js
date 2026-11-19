@@ -50,6 +50,7 @@ export const SHOT = {
   "09": "/images/power-main1.jpeg",
   "11": "/images/crm-main1.jpeg",
   "12": "/images/clickup-main.jpeg",
+  "16": "/images/ghl-sms-main.jpeg",
 };
 
 export const PROJECTS = [
@@ -59,6 +60,8 @@ export const PROJECTS = [
     context: "Multi-regional SAP programs across Europe, the USA, Brazil and Pakistan.", did: "Ran delivery of SD, C4C, FICO, PLM and HCM work, standardised PM processes, and drove training and post-go-live stabilisation.", result: "5 SAP modules (SD, C4C, FICO, PLM, HCM) delivered across 4 regions, with one standard PM workflow adopted across teams." },
   { n: "03", title: "Hail ride-hailing app", summary: "Rider and driver apps, launched August 2026", platforms: ["React Native", "Stripe", "AWS"], cats: ["Product"], region: "US",
     context: "A US startup launching a negotiated-fare ride-hailing app.", did: "Defined MVP scope, coordinated three engineering teams, ran Twilio SMS and payments integration.", result: "Launched in August 2026: MVP taken from scope to live across 3 engineering teams, with Stripe payments built into rider and driver apps." },
+  { n: "16", title: "GHL SMS drip and lead pipeline", summary: "Compliant SMS outreach for a US health insurance agency", platforms: ["GoHighLevel"], cats: ["Automation"], region: "US",
+    context: "A US health insurance agency with thousands of cold leads and no compliant way to work them.", did: "Built two GoHighLevel workflows: a tag-triggered SMS drip in drip mode with a DND check before every send, and a reply handler that ends opt-outs and STOP keywords, then tags interested leads, pulls them from the drip and creates an opportunity.", result: "47,000+ contacts enrolled, with interested replies landing in one pipeline (Replied, Convo Started, Ineligible, Sold) for agents to work." },
   { n: "04", title: "DHA asset operations", summary: "Fitness tracking and repair-cycle reporting for 470+ assets", platforms: ["Firebase"], cats: ["Product", "Automation"], region: "PK",
     context: "Vehicles, engineering plant and IT equipment with no shared view of fitness or repairs.", did: "Built a fitness-state tracker and repair-cycle framework, plus monthly executive dashboards on fitness ratios, repair throughput and rental deployment.", result: "470+ assets moved from no shared view into one tracker, with reporting going from ad-hoc updates to a monthly executive dashboard." },
   { n: "05", title: "ACA Campaign Manager", summary: "Browser tools for insurance outreach and data extraction", platforms: ["JavaScript", "Excel"], cats: ["Automation"], region: "US",
