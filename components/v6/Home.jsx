@@ -8,6 +8,7 @@ import { LOGO, SHOT, PROJECTS, ROLES, TOOLS_A, PROJECTS_DELIVERED, UPWORK_JOBS }
 import { LINES, LINE, linesOf, lineCount } from "@/data/lines";
 import { Book, ArrowRight } from "./Chrome";
 import ContactSection from "./Contact";
+import ProjectModal from "./ProjectModal";
 import { Chips, History, Credentials, QuoteReel, ServiceList } from "./Interactive";
 
 const byN = (n) => PROJECTS.find((p) => p.n === n);
@@ -86,17 +87,10 @@ export default function Home() {
   const matches = PROJECTS.filter((p) => cat === "all" || linesOf(p).includes(cat));
   const shown = cat === "all" && !showAll ? matches.slice(0, 6) : matches;
 
-  const openProject = (n) => {
-    setCat("all");
-    setShowAll(true);
-    setOpen(n);
-    requestAnimationFrame(() => {
-      const el = document.getElementById(`st-${n}`);
-      if (!el) return;
-      el.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
-      el.querySelector("button")?.focus({ preventScroll: true });
-    });
-  };
+  // Projects open in a modal. Arrows inside it move through the filtered list when the project is in it, otherwise through all projects.
+  const openProject = (n) => setOpen(n);
+  const current = open ? byN(open) : null;
+  const navList = current && matches.some((p) => p.n === current.n) ? matches : PROJECTS;
 
   return (
     <>
@@ -177,18 +171,17 @@ export default function Home() {
       <section id="work" className="wrap sec">
         <div className="sec-head">
           <h2>Selected work.</h2>
-          <p className="sec-intro">Each card is one project, with its result in green. Filter by the kind of work, and open a card for the context and what I did.</p>
-          <Chips label="Filter projects by kind of work" value={cat} onChange={(v) => { setCat(v); setOpen(null); }} options={[{ id: "all", label: "All", count: PROJECTS.length }, ...LINES.map((l) => ({ id: l.id, label: l.name, count: lineCount(l.id) }))]} />
+          <p className="sec-intro">Each card is one project, with its result in green. Filter by the kind of work, and open a card to see the context and what I did.</p>
+          <Chips label="Filter projects by kind of work" value={cat} onChange={(v) => setCat(v)} options={[{ id: "all", label: "All", count: PROJECTS.length }, ...LINES.map((l) => ({ id: l.id, label: l.name, count: lineCount(l.id) }))]} />
         </div>
         <ul className="work-grid">
           {shown.map((p) => {
-            const ex = open === p.n;
             const shot = SHOT[p.n];
             const seen = new Set();
             const logos = p.platforms.filter((x) => LOGO[x] && !seen.has(LOGO[x]) && seen.add(LOGO[x])).slice(0, 3);
             return (
-              <li key={p.n} id={`st-${p.n}`} className={"wcard" + (ex ? " open" : "")}>
-                <button type="button" className="wbtn" aria-expanded={ex} aria-controls={`panel-${p.n}`} onClick={() => setOpen(ex ? null : p.n)}>
+              <li key={p.n} id={`st-${p.n}`} className="wcard">
+                <button type="button" className="wbtn" aria-haspopup="dialog" onClick={() => setOpen(p.n)}>
                   <span className="wvis">
                     {shot ? <img src={shot} alt="" loading="lazy" /> : <span className="wlogos">{logos.map((x) => <img key={x} src={LOGO[x]} alt="" />)}</span>}
                   </span>
@@ -197,15 +190,8 @@ export default function Home() {
                     <span className="wtitle">{p.title}</span>
                     <span className="wres">{p.result}</span>
                   </span>
-                  <span className="st-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg></span>
+                  <span className="st-toggle" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M7 17L17 7M8 7h9v9" /></svg></span>
                 </button>
-                {ex && (
-                  <dl id={`panel-${p.n}`} className="wfacts">
-                    <div><dt>Context</dt><dd>{p.context}</dd></div>
-                    <div><dt>What I did</dt><dd>{p.did}</dd></div>
-                    <div><dt>Platforms</dt><dd>{p.platforms.join(", ")}</dd></div>
-                  </dl>
-                )}
               </li>
             );
           })}
@@ -215,6 +201,8 @@ export default function Home() {
           <Link href="/projects" className="link">Case studies with screenshots<ArrowRight /></Link>
         </div>
       </section>
+
+      <ProjectModal project={current} list={navList} onChange={setOpen} onClose={() => setOpen(null)} />
 
       <div id="services" className="wrap sec anchor">
         <ServiceList />

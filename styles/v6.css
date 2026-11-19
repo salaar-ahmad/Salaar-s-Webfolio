@@ -476,3 +476,36 @@ a.source:hover { border-color: var(--ac); }
 /* A light rounded tile so the logos' dark parts stay visible on the dark page; padded so nothing is cropped. */
 .trust-logo { flex: 0 0 auto; display: grid; place-items: center; width: 38px; height: 38px; padding: 7px; border-radius: 10px; background: #fff; overflow: hidden; }
 .trust-logo img { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* Project modal */
+.wbtn:hover .st-toggle { transform: rotate(45deg); }
+html.modal-open { overflow: hidden; }
+.pmodal { margin: auto; inset: 0; width: min(920px, calc(100vw - 32px)); max-height: calc(100dvh - 48px); padding: 0; border: 1px solid var(--line); border-radius: 26px; background: var(--s1); color: var(--tx); overflow: hidden; box-shadow: 0 40px 120px -30px rgba(0, 0, 0, 0.9); }
+.pmodal::backdrop { background: rgba(5, 6, 8, 0.62); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.pmodal[open] { animation: v-pop 0.38s var(--ease) both; }
+.pmodal[open]::backdrop { animation: v-fade 0.3s ease both; }
+@keyframes v-pop { from { opacity: 0; transform: translateY(18px) scale(0.97); } to { opacity: 1; transform: none; } }
+@keyframes v-fade { from { opacity: 0; } to { opacity: 1; } }
+.pmodal-card { display: flex; flex-direction: column; max-height: calc(100dvh - 50px); overflow-y: auto; overscroll-behavior: contain; animation: v-rise 0.35s var(--ease) both; }
+.pmodal-vis { position: relative; flex: 0 0 auto; height: clamp(200px, 34vh, 320px); overflow: hidden; background: linear-gradient(180deg, #1c2026, #14171b); }
+.pmodal-vis > img { width: 100%; height: 100%; object-fit: cover; }
+.pmodal-vis .wlogos img { width: 76px; height: 76px; padding: 15px; }
+.pmodal-close { position: absolute; top: 14px; right: 14px; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(10, 11, 13, 0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.16); color: #fff; transition: background-color 0.18s ease, color 0.18s ease; }
+.pmodal-close:hover { background: var(--ac); color: var(--on-ac); }
+.pmodal-body { display: flex; flex-direction: column; gap: 12px; padding: 26px 30px 28px; }
+.pmodal-body .wmeta { margin: 0; }
+.pmodal-body h3 { font-size: clamp(24px, 3vw, 34px); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+.pmodal-res { font-size: 18px; color: var(--ac); }
+.pmodal-facts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px 28px; margin-top: 8px; padding-top: 20px; border-top: 1px solid var(--line); }
+.pmodal-facts dt { margin-bottom: 6px; font-size: 13px; font-weight: 600; color: var(--mu); }
+.pmodal-facts dd { font-size: 15px; color: #d4d7dc; }
+.pmodal-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-top: 10px; padding-top: 20px; border-top: 1px solid var(--line); }
+.pmodal-nav { display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 600; color: var(--mu); }
+@media (max-width: 760px) {
+  .pmodal { width: 100vw; max-width: 100vw; max-height: 92dvh; margin: auto 0 0; border-radius: 22px 22px 0 0; }
+  .pmodal-card { max-height: 92dvh; }
+  .pmodal-vis { height: 210px; }
+  .pmodal-body { padding: 22px 18px 24px; }
+  .pmodal-facts { grid-template-columns: minmax(0, 1fr); }
+  @keyframes v-pop { from { transform: translateY(40px); } to { transform: none; } }
+}
