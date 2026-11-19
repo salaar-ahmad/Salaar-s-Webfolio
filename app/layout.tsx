@@ -32,14 +32,6 @@ export const metadata: Metadata = {
     title: siteName,
     description: siteDescription,
   },
-  icons: {
-    icon: [
-      { url: "/favicon.png", type: "image/png" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-  },
   manifest: "/manifest.json",
 };
 
