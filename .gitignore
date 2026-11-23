@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reanimate skill: capture evidence and its installed script deps
+.reanimate/
+.claude/skills/reanimate/scripts/node_modules/
