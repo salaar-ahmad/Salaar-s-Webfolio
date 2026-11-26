@@ -40,7 +40,7 @@ export default function ContactSection() {
       <div className="wrap contact-in">
         <div className="contact-talk">
           <h2>Got a rollout that keeps slipping?</h2>
-          <p className="lead">Booking calls for new projects. The button opens my calendar: pick a 30-minute slot and we go through your systems and your dates. Or send the details with the form.</p>
+          <p className="lead">I&apos;m taking on new projects. Book a 30-minute call to go through your systems and dates, or send the details here.</p>
           <Book className="btn btn-exit">Book a 30-minute call<ArrowRight /></Book>
           <div className="contact-list">
             <a href={`mailto:${EMAIL}`}><FiMail aria-hidden="true" />{EMAIL}</a>
@@ -51,7 +51,7 @@ export default function ContactSection() {
         </div>
         <form className="form tile" onSubmit={onSubmit}>
           <h3>Send a message</h3>
-          <p className="sec-intro">Pick what it is about and fill in the details. It lands in my inbox and I reply by email.</p>
+          <p className="sec-intro">I reply by email.</p>
           <div className="field"><span className="field-label">What is it about?</span><Chips label="What is it about?" value={topic} onChange={(t) => setTopic(topic === t ? "" : t)} options={TOPICS.map((t) => ({ id: t, label: t }))} /></div>
           <div className="field-row">
             <div className="field"><label htmlFor="c-name">Your name</label><input id="c-name" name="name" value={form.name} onChange={onChange} autoComplete="name" required /></div>

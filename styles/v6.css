@@ -509,3 +509,35 @@ html.modal-open { overflow: hidden; }
   .pmodal-facts { grid-template-columns: minmax(0, 1fr); }
   @keyframes v-pop { from { transform: translateY(40px); } to { transform: none; } }
 }
+
+/* ---------- Template tells removed (Nov 2026) ----------
+   No decorative glows, glass, gradients, pulsing dots, floating badges, scroll gimmicks or hover jumps.
+   Motion is kept to the hero entrance, the slow disc behind the portrait, and state changes. */
+.hero, .phead, .contact { background: none; }
+.band::after { display: none; }
+.live, .h-date b::before { animation: none; }
+.sec-head h2, .exit h2 { animation: none !important; }
+
+/* Portrait: one flat disc that drifts slowly, no blur, no ring, no glowing dot. */
+.stage-glow { width: 74%; top: 56%; background: #1a1f12; border: 1px solid #2b3318; filter: none; }
+.stage-ring { display: none; }
+@media (prefers-reduced-motion: no-preference) {
+  .stage-glow { animation: v-drift 14s ease-in-out infinite; }
+  .badges li { animation: v-rise 0.7s var(--ease) both; }
+}
+@keyframes v-drift { 0%, 100% { transform: translate(-50%, -50%) scale(1); } 50% { transform: translate(-48%, -52%) scale(1.03); } }
+.badges li { background: var(--s1); backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; }
+
+/* Flat surfaces instead of gradients. */
+.wvis, .pmodal-vis { background: var(--s2); }
+.tile.face { background: var(--s2); }
+
+/* Hover: change colour, don't jump. */
+.btn:hover, .wcard:hover, .tile.stat:hover, .creds li:hover, .foot-links a:hover, .plain li:hover,
+.case:hover, .quotes li:hover, .proof-row .pcard:hover, .pcard:hover, .tilt:hover { transform: none; }
+.wcard:hover .wlogos img:nth-child(odd), .wcard:hover .wlogos img:nth-child(even) { transform: none; }
+.wcard:hover .wvis > img, .case:hover .case-img img { transform: none; }
+.wcard:hover, .case:hover, .proof-row .pcard:hover { border-color: #5a616c; }
+
+/* Audience line sits under the headline, as plain text. */
+.for { font-size: clamp(16px, 1.3vw, 18px); font-weight: 600; color: var(--ac); }

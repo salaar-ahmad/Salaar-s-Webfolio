@@ -9,7 +9,6 @@ import { projects } from "@/data/projects";
 import { LINES, LINE } from "@/data/lines";
 import { ArrowRight } from "./Chrome";
 
-const WORDS = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
 const Plus = () => (
   <span className="st-toggle" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round"><path d="M12 5v14M5 12h14" /></svg></span>
 );
@@ -41,8 +40,7 @@ export function History() {
   return (
     <section id="history">
       <div className="sec-head">
-        <h2>Service history.</h2>
-        <p className="sec-intro">{WORDS[ROLES.length] || ROLES.length} roles, newest first. Open a stop to see what I delivered there.</p>
+        <h2>Experience</h2>
       </div>
       <ol className="history">
         {ROLES.map((r, i) => {
@@ -88,8 +86,7 @@ export function CertList() {
   return (
     <section>
       <div className="sec-head">
-        <h2>Education and certifications.</h2>
-        <p className="sec-intro">One degree and {CERTIFICATIONS.length} certificates. Pick an issuer to narrow the list.</p>
+        <h2>Education and certifications</h2>
         <Chips label="Filter certificates by issuer" value={who} onChange={setWho} options={groups.map((g) => ({ id: g, label: g, count: g === "All" ? CERTIFICATIONS.length : CERTIFICATIONS.filter((c) => issuerOf(c) === g).length }))} />
       </div>
       <ul className="rows">
@@ -113,8 +110,7 @@ export function ServiceList() {
   return (
     <section>
       <div className="sec-head">
-        <h2>{shown.length === SERVICES.length ? `${WORDS[SERVICES.length] || SERVICES.length} services.` : `${WORDS[shown.length] || shown.length} in ${LINE[line].name}.`}</h2>
-        <p className="sec-intro">Each service belongs to one kind of work. Pick a kind to narrow the list, then open a service to see what is included.</p>
+        <h2>Services</h2>
         <Chips label="Filter services by kind of work" value={line} onChange={setLine} options={[{ id: "all", label: "All", count: SERVICES.length, color: "" }, ...used.map((l) => ({ id: l.id, label: l.name, count: SERVICES.filter((s) => s.line === l.id).length, color: l.color }))]} />
       </div>
       <ul className="acc">
@@ -153,8 +149,7 @@ export function CaseGrid() {
   return (
     <section>
       <div className="sec-head">
-        <h2>{needle ? `${shown.length} of ${projects.length} case studies.` : `${projects.length} case studies.`}</h2>
-        <p className="sec-intro">Type a tool or keyword to filter, or pick one below. Open a case study for the screenshots and the full account.</p>
+        <h2>{needle ? `${shown.length} of ${projects.length} case studies` : `${projects.length} case studies`}</h2>
         <div className="search">
           <label htmlFor="case-q">Filter by tool or keyword</label>
           <input id="case-q" type="search" value={q} onChange={(e) => setQ(e.target.value)} placeholder="For example SAP, ClickUp, Stripe" autoComplete="off" />
@@ -218,8 +213,8 @@ export function QuoteReel() {
     <section id="reviews" className="reel" aria-label="Client reviews" onPointerEnter={() => setAuto(false)}>
       <div className="wrap reel-in">
         <div className="sec-head">
-          <h2>What clients say.</h2>
-          <p className="sec-intro">Screenshots of reviews from my Upwork profile and testimonials from ClickUp clients, one at a time. It moves on by itself until you take over with the arrows.</p>
+          <h2>What clients say</h2>
+          <p className="sec-intro">Reviews from my Upwork profile, and two testimonials from ClickUp clients.</p>
         </div>
         <figure key={i} className={"reel-quote" + (s.shot ? " has-shot" : "") + (s.shot && s.kind === "upwork" ? " wide" : "")} aria-live="polite">
           {s.shot && <a className="reel-shot" href={s.shot} target="_blank" rel="noopener noreferrer" aria-label="Open the full image"><img src={s.shot} alt={s.alt || `Upwork review for ${s.title}: ${s.quote}`} /></a>}

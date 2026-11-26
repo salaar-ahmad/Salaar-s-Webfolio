@@ -125,7 +125,7 @@ export function WayOut({ id }) {
     <section id={id} className="exit">
       <div className="wrap exit-in">
         <h2>Got a rollout that keeps slipping?</h2>
-        <p className="lead">Booking calls for new projects. The button opens my calendar: pick a 30-minute slot and we go through your systems and your dates.</p>
+        <p className="lead">I&apos;m taking on new projects. Book a 30-minute call to go through your systems and dates.</p>
         <div className="actions">
           <Book className="btn btn-ink">Book a 30-min call<ArrowRight /></Book>
           <a href={`mailto:${EMAIL}`} className="link"><FiMail aria-hidden="true" />{EMAIL}</a>

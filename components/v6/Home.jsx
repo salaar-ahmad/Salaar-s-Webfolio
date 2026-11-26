@@ -1,7 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { FiFileText } from "react-icons/fi";
 import { LOGO, SHOT, PROJECTS, ROLES, TOOLS_A, PROJECTS_DELIVERED, UPWORK_JOBS } from "@/data/site";
@@ -12,6 +12,8 @@ import ProjectModal from "./ProjectModal";
 import { Chips, History, Credentials, QuoteReel, ServiceList } from "./Interactive";
 
 const byN = (n) => PROJECTS.find((p) => p.n === n);
+const WORDS = ["Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen", "Twenty"];
+const word = (n) => WORDS[n] || String(n);
 
 // The first screen speaks to whoever is visiting: someone with a project, or someone hiring.
 const AUDIENCE = {
@@ -34,28 +36,7 @@ const FEATURED = ["01", "02", "03", "09"];
 
 // Counts up from zero the first time it scrolls into view.
 function Count({ to, plus }) {
-  const ref = useRef(null);
-  const [n, setN] = useState(to);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    let raf = 0;
-    const io = new IntersectionObserver(([e]) => {
-      if (!e.isIntersecting) return;
-      io.disconnect();
-      let t0 = null;
-      const step = (t) => {
-        if (t0 === null) t0 = t;
-        const k = Math.min(1, (t - t0) / 1100);
-        setN(Math.round(to * (1 - Math.pow(1 - k, 3))));
-        if (k < 1) raf = requestAnimationFrame(step);
-      };
-      raf = requestAnimationFrame(step);
-    }, { threshold: 0.4 });
-    io.observe(el);
-    return () => { io.disconnect(); cancelAnimationFrame(raf); };
-  }, [to]);
-  return <b ref={ref}>{n}{plus && n === to ? "+" : ""}</b>;
+  return <b>{to}{plus ? "+" : ""}</b>;
 }
 
 // Salaar's local time, ticking on the client only.
@@ -71,9 +52,9 @@ function LocalTime() {
 }
 
 const STEPS = [
-  { k: "Scope", t: "Get the scope right.", d: "Requirements, estimates and the solution outline are settled before the first sprint starts.", ex: [["01", "Solution Architecture Document for an in-house CRM"], ["03", "MVP scope defined for the Hail rider and driver apps"], ["14", "Effort estimates and solution outline for a government tender"]] },
-  { k: "Run", t: "Keep the teams moving.", d: "Sprints, UAT and one delivery cadence across every team involved.", ex: [["06", "Sprint planning and delivery cadence in Azure DevOps"], ["03", "Three engineering teams coordinated to launch"], ["09", "CI/CD pipelines, UAT and production deployment"]] },
-  { k: "Hand over", t: "Hand over something that runs without me.", d: "Go-live is planned, people are trained, and support continues after launch.", ex: [["15", "One cutover playbook covering 5 workstreams"], ["02", "Training and post-go-live stabilisation"], ["01", "Structured handover and post-launch support"]] },
+  { k: "Scope", t: "Agree the scope", d: "Requirements, estimates and the solution outline are signed off before the first sprint.", ex: [["01", "Solution Architecture Document for an in-house CRM"], ["03", "MVP scope defined for the Hail rider and driver apps"], ["14", "Effort estimates and solution outline for a government tender"]] },
+  { k: "Run", t: "Run the delivery", d: "Sprints, UAT and one weekly cadence for every team on the project.", ex: [["06", "Sprint planning and delivery cadence in Azure DevOps"], ["03", "Three engineering teams coordinated to launch"], ["09", "CI/CD pipelines, UAT and production deployment"]] },
+  { k: "Hand over", t: "Hand it over", d: "A planned go-live with trained users, then support after launch.", ex: [["15", "One cutover playbook covering 5 workstreams"], ["02", "Training and post-go-live stabilisation"], ["01", "Structured handover and post-launch support"]] },
 ];
 
 export default function Home() {
@@ -103,8 +84,8 @@ export default function Home() {
               ))}
             </div>
             <div key={who} className="swap">
-              <p className="for"><i aria-hidden="true" />{a.forWhom}</p>
               <h1>{a.h}</h1>
+              <p className="for">{a.forWhom}</p>
               <p className="lead">{a.lead}</p>
             </div>
             <div className="actions">
@@ -129,7 +110,6 @@ export default function Home() {
 
           <figure className="stage">
             <span className="stage-glow" aria-hidden="true" />
-            <span className="stage-ring" aria-hidden="true" />
             <img className="stage-me" src="/v5/hero.webp" alt="Salaar Ahmad Furqan in a dark suit" fetchPriority="high" />
             <ul className="badges" aria-label="Highlights">
               <li className="b1"><img src={LOGO.Upwork} alt="" /><span><b>Top Rated on Upwork</b>{UPWORK_JOBS} jobs completed</span></li>
@@ -170,8 +150,8 @@ export default function Home() {
 
       <section id="work" className="wrap sec">
         <div className="sec-head">
-          <h2>Selected work.</h2>
-          <p className="sec-intro">Each card is one project, with its result in green. Filter by the kind of work, and open a card to see the context and what I did.</p>
+          <h2>Selected work</h2>
+          <p className="sec-intro">{word(PROJECTS.length)} projects across ERP, Power Platform, ClickUp, automation and product delivery.</p>
           <Chips label="Filter projects by kind of work" value={cat} onChange={(v) => setCat(v)} options={[{ id: "all", label: "All", count: PROJECTS.length }, ...LINES.map((l) => ({ id: l.id, label: l.name, count: lineCount(l.id) }))]} />
         </div>
         <ul className="work-grid">
@@ -210,8 +190,7 @@ export default function Home() {
 
       <section id="how" className="wrap sec anchor">
         <div className="sec-head">
-          <h2>How a project runs with me.</h2>
-          <p className="sec-intro">Three numbers that sum up my track record, and the three stages every project goes through. Pick a stage to see which projects show it.</p>
+          <h2>How I run a project</h2>
         </div>
         <div className="bento">
           <div className="tile stat"><Count to={PROJECTS_DELIVERED} plus /><span>projects delivered, plus {UPWORK_JOBS} jobs on Upwork</span></div>
@@ -235,7 +214,7 @@ export default function Home() {
           </div>
           <div className="tile face">
             <img src="/images/about-pfp.jpeg" alt="Salaar Ahmad Furqan" loading="lazy" />
-            <p>Nearly four years as a Technical Project Manager and QA Officer in the Pakistan Army. That is still the job: get the scope right, keep the teams moving, and hand over something that runs without me.</p>
+            <p>Before this, I spent nearly four years as a Technical Project Manager and QA Officer in the Pakistan Army, leading teams of up to 22.</p>
           </div>
         </div>
       </section>

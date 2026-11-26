@@ -7,7 +7,7 @@ import { Geist } from "next/font/google";
 const sign = Geist({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
 
 const siteName = "Salaar Ahmad Furqan | Technical Project Manager";
-const siteDescription = "Top Rated Technical Project Manager specializing in ClickUp, SAP, Azure DevOps, Agile methodologies, and enterprise automation. Delivering mission-critical projects across global teams.";
+const siteDescription = "Technical and ERP project manager in Islamabad. SAP, Dynamics 365, Power Platform and ClickUp projects for teams in Australia, the US, Europe and Latin America.";
 const siteUrl = "https://salaarahmad.com"; // Update with your actual domain
 
 export const metadata: Metadata = {

@@ -4,7 +4,7 @@ import { CaseGrid } from "@/components/v6/Interactive";
 export default function Projects() {
   return (
     <>
-      <PageHead title="Case studies." lead="End-to-end delivery across SaaS, enterprise, and automation projects." />
+      <PageHead title="Case studies" lead="Screenshots and the full write-up for each project." />
       <div className="wrap page">
         <CaseGrid />
       </div>

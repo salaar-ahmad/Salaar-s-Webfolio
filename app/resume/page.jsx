@@ -5,7 +5,7 @@ import { PageHead } from "@/components/v6/Chrome";
 export default function ResumePage() {
   return (
     <>
-      <PageHead title="Resume." lead="View or download my professional resume.">
+      <PageHead title="Resume">
         <div className="actions">
           <a href={RESUME_PDF} download className="btn btn-ink"><FiDownload aria-hidden="true" />Download resume</a>
           <a href={RESUME_PDF} target="_blank" rel="noopener noreferrer" className="btn btn-line"><FiExternalLink aria-hidden="true" />Open PDF</a>
