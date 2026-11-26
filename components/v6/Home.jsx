@@ -9,6 +9,7 @@ import { LINES, LINE, linesOf, lineCount } from "@/data/lines";
 import { Book, ArrowRight } from "./Chrome";
 import ContactSection from "./Contact";
 import ProjectModal from "./ProjectModal";
+import Cover, { hasCover } from "./Cover";
 import { Chips, History, Credentials, QuoteReel, ServiceList } from "./Interactive";
 
 const byN = (n) => PROJECTS.find((p) => p.n === n);
@@ -125,7 +126,7 @@ export default function Home() {
             {who === "client"
               ? FEATURED.map(byN).map((p) => (
                 <a key={p.n} href={`#st-${p.n}`} className="pcard" onClick={(e) => { e.preventDefault(); openProject(p.n); }}>
-                  {SHOT[p.n] ? <img src={SHOT[p.n]} alt="" /> : <span className="pcard-blank" />}
+                  {hasCover(p.n) ? <Cover project={p} size="mini" /> : SHOT[p.n] ? <img src={SHOT[p.n]} alt="" /> : <span className="pcard-blank" />}
                   <span><strong>{p.title}</strong><span>{p.summary}</span></span>
                   <ArrowRight />
                 </a>
@@ -163,7 +164,7 @@ export default function Home() {
               <li key={p.n} id={`st-${p.n}`} className="wcard">
                 <button type="button" className="wbtn" aria-haspopup="dialog" onClick={() => setOpen(p.n)}>
                   <span className="wvis">
-                    {shot ? <img src={shot} alt="" loading="lazy" /> : <span className="wlogos">{logos.map((x) => <img key={x} src={LOGO[x]} alt="" />)}</span>}
+                    {hasCover(p.n) ? <Cover project={p} /> : shot ? <img src={shot} alt="" loading="lazy" /> : <span className="wlogos">{logos.map((x) => <img key={x} src={LOGO[x]} alt="" />)}</span>}
                   </span>
                   <span className="wbody">
                     <span className="wmeta">{linesOf(p).map((id) => LINE[id].name).join(" · ")}<span>{p.region}</span></span>

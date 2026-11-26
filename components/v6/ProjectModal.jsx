@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import { LOGO, SHOT } from "@/data/site";
 import { LINE, linesOf } from "@/data/lines";
 import { Book, ArrowRight } from "./Chrome";
+import Cover, { hasCover } from "./Cover";
 
 const ArrowLeft = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M20 12H4M11 5l-7 7 7 7" /></svg>
@@ -63,7 +64,7 @@ export default function ProjectModal({ project, list, onChange, onClose }) {
       {project && (
         <div className="pmodal-card" key={project.n}>
           <div className="pmodal-vis">
-            {shot ? <img src={shot} alt={`Screenshot from ${project.title}`} /> : <span className="wlogos">{logos.map((x) => <img key={x} src={LOGO[x]} alt="" />)}</span>}
+            {hasCover(project.n) ? <Cover project={project} size="large" /> : shot ? <img src={shot} alt={`Screenshot from ${project.title}`} /> : <span className="wlogos">{logos.map((x) => <img key={x} src={LOGO[x]} alt="" />)}</span>}
             <button type="button" className="pmodal-close" aria-label="Close" onClick={onClose}><Close /></button>
           </div>
           <div className="pmodal-body">
