@@ -1,0 +1,6 @@
+MIT License (as declared in the upstream README and SKILL.md frontmatter).
+
+Source: https://github.com/theclaymethod/unslop (commit 0f4a07f), by Clayton Kim.
+Vendored without the evals/, plans/ and docs/ folders, which are only used to
+maintain the skill. Renamed from "unslop" to "unslop-writing" so it does not
+clash with the heydamir/unslop UI plugin.
